@@ -9238,7 +9238,7 @@ var __webpack_exports__ = {};
 const core = __nccwpck_require__(2186);
 const github = __nccwpck_require__(5438);
 const wait = __nccwpck_require__(4258);
-// const fs = require('fs');
+const fs = __nccwpck_require__(5747);
 const path = __nccwpck_require__(5622);
 // const { execSync } = require('child_process');
 
@@ -9263,12 +9263,13 @@ async function run() {
     console.log('path', path.resolve('.'));
     core.setOutput('payload', payload)
 
-    // fs.appendFile(path.resolve('','CHANGELOG.md'), 'data to append', function (err) {
-    //   if (err) {
-    //     throw err
-    //   }
-    //   console.log('Saved!');
-    // });
+    // fs.appendFile(path.resolve('/home/runner/work/test-my-action/test-my-action','CHANGELOG.md'), 'data to append', function (err) {
+    fs.appendFile(path.resolve('../../../../../','CHANGELOG.md'), 'data to append', function (err) {
+      if (err) {
+        throw err
+      }
+      console.log('Saved!');
+    });
   } catch (error) {
     core.setFailed(error.message);
   }

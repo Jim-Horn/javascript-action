@@ -1,7 +1,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 const wait = require('./wait');
-// const fs = require('fs');
+const fs = require('fs');
 const path = require('path');
 // const { execSync } = require('child_process');
 
@@ -26,12 +26,13 @@ async function run() {
     console.log('path', path.resolve('.'));
     core.setOutput('payload', payload)
 
-    // fs.appendFile(path.resolve('','CHANGELOG.md'), 'data to append', function (err) {
-    //   if (err) {
-    //     throw err
-    //   }
-    //   console.log('Saved!');
-    // });
+    // fs.appendFile(path.resolve('/home/runner/work/test-my-action/test-my-action','CHANGELOG.md'), 'data to append', function (err) {
+    fs.appendFile(path.resolve('../../../../../','CHANGELOG.md'), 'data to append', function (err) {
+      if (err) {
+        throw err
+      }
+      console.log('Saved!');
+    });
   } catch (error) {
     core.setFailed(error.message);
   }
