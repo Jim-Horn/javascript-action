@@ -13,9 +13,10 @@ async function run() {
     core.info((new Date()).toTimeString());
 
     core.setOutput('time', new Date().toTimeString());
+    core.setOutput('message','Yo - here I am');
   } catch (error) {
     core.setFailed(error.message);
   }
 }
 
-run();
+run().then(r => r);
