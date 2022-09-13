@@ -9253,7 +9253,8 @@ async function run() {
     core.setOutput('time', new Date().toTimeString());
     core.setOutput('message','Yo - here I am');
     const payload = JSON.stringify(github.context.payload, null, 2);
-    console.log(`The payload is: ${payload}`)
+    console.log(`The payload is: ${payload}`);
+    core.setOutput('payload', payload)
   } catch (error) {
     core.setFailed(error.message);
   }
