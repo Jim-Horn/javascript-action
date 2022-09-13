@@ -1,7 +1,13 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 const wait = require('./wait');
+// const fs = require('fs');
+const path = require('path');
+// const { execSync } = require('child_process');
 
+// function executeCommand(cmd) {
+//   return execSync(cmd).toString();
+// }
 
 // most @actions toolkit packages have async methods
 async function run() {
@@ -17,7 +23,15 @@ async function run() {
     core.setOutput('message','Yo - here I am');
     const payload = JSON.stringify(github.context.payload, null, 2);
     console.log(`The payload is: ${payload}`);
+    console.log('path', path.resolve('.'));
     core.setOutput('payload', payload)
+
+    // fs.appendFile(path.resolve('','CHANGELOG.md'), 'data to append', function (err) {
+    //   if (err) {
+    //     throw err
+    //   }
+    //   console.log('Saved!');
+    // });
   } catch (error) {
     core.setFailed(error.message);
   }
