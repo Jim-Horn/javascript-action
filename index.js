@@ -27,7 +27,8 @@ async function run() {
     core.setOutput('payload', payload)
 
     // fs.appendFile(path.resolve('/home/runner/work/test-my-action/test-my-action','CHANGELOG.md'), 'data to append', function (err) {
-    fs.appendFile(path.resolve('../../../../../','CHANGELOG.md'), 'data to append', function (err) {
+    // fs.appendFile(path.resolve('../../../../../','CHANGELOG.md'), 'data to append', function (err) {
+    fs.appendFile(path.resolve('/','CHANGELOG.md'), 'data to append', function (err) {
       if (err) {
         throw err
       }
